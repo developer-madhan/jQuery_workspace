@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery selectors</title>
+    <script src="../js/jquery-3.7.1.js"></script>
+  </head>
+  <body>
+    <!-- ID selector -->
+    <div id="uniqueElement">Content</div>
+
+    <!-- Class selector -->
+    <div class="box">content 1</div>
+    <div class="box">content 2</div>
+
+    <!-- Element Selector -->
+    <p>pargraph 1</p>
+    <p>pargraph 2</p>
+    <br />
+    <!-- attribute selector -->
+    <form action="">
+      <input type="text" placeholder="Enter Text" name="" id="" />
+      <input
+        type="password"
+        placeholder="Enter Password"
+        name=""
+        id=""
+      /><br /><br />
+      <!-- Value selector -->
+      <input type="text" name="username" id="" />
+    </form>
+    <br />
+    <!-- partial Value Selector -->
+    <a href="http://example.com" target="_blank" rel="noopener noreferrer"
+      >Example</a
+    ><br />
+    <a href="http://example.org" target="_blank" rel="noopener noreferrer"
+      >Example org</a
+    ><br />
+    <a href="https://google.com" target="_blank" rel="noopener noreferrer"
+      >Example google</a
+    ><br />
+    <!-- Descendant Selector -->
+    <div class="container">
+      <p>paragraph1</p>
+      <p>paragraph2</p>
+    </div>
+    <br />
+
+    <!-- Child selector -->
+    <div class="parent">
+      <p>Direct Child</p>
+      <div>
+        <p>NOt a Direct Child</p>
+      </div>
+    </div>
+    <script>
+      // ID selector
+      $("#uniqueElement").text("New Content");
+
+      // Class selector
+      $(".box").css("background-color", "green");
+
+      // Element Selector
+      //   $("p").hide();
+
+      //attribute selector
+      $("[placeholder]").css("border", "2px solid");
+
+      //   Value selector
+      $('[name="username"]').val("Default User");
+
+      //   partial Value Selector
+      $('a[href*="example"]').css("color", "red");
+      $('a[href^="https://google"]').css("color", "green");
+
+      //   Descendant Selector
+      $(".container p").css("color", "blue");
+
+      //   Child selector
+      $('.parent > p').css('font-weight','bold');
+      
+    </script>
+  </body>
+</html>
